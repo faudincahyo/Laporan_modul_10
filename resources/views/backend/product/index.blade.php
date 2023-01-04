@@ -5,6 +5,7 @@
 
 @section('content')
     <div class="row">
+
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body px-4 py-4-5">
@@ -38,6 +39,23 @@
     </div>
     <div class="row">
         <div class="col-12">
+
+
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Data Berhasil Ditambahkan</strong> {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if (session('galat'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Produk belum ditambahkan</strong> {{ session('galat') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+
             <div class="card">
                 <div class="card-header">
                     <h4>@yield('title')</h4>
